@@ -1,0 +1,37 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/DancingScript-Bold.ttf",
+      "sha1": "40e545d9cdad467a919c2a38c032bc4fdb69c01f"
+    },
+    {
+      "path": "assets/fonts/DancingScript-Medium.ttf",
+      "sha1": "575d42d95b4b562cbd91341e61ab754386ffeadd"
+    },
+    {
+      "path": "assets/fonts/DancingScript-Regular.ttf",
+      "sha1": "77b7bf804974618d28d7b73c79ea5d34c82cb704"
+    },
+    {
+      "path": "assets/fonts/DancingScript-SemiBold.ttf",
+      "sha1": "3d2e9198ccd497e0ccaf29b53cd2e4e9063dc78a"
+    },
+    {
+      "path": "assets/fonts/DancingScript-VariableFont_wght.ttf",
+      "sha1": "80f13e7575ec59a51b7fdc42bb0b9d7a34439123"
+    },
+    {
+      "path": "assets/fonts/OFL.txt",
+      "sha1": "ee5aafafdbd5ae26303c838c335d1c4a767b1f63"
+    },
+    {
+      "path": "assets/fonts/ProtestRevolution-Regular.ttf",
+      "sha1": "5bde6f8c504048d82c496906b125ae3f621ddc07"
+    },
+    {
+      "path": "assets/fonts/README.txt",
+      "sha1": "c26303553d2841dad8023a6eeabb64b8ba2deda6"
+    }
+  ]
+}
