@@ -28,7 +28,7 @@ const image = [
   'https://www.myhoardings.com/blog/wp-content/uploads/2019/01/Zomato-1.jpg',
   'https://www.nurphoto.com/en/photo/10142678/picture/pictland',
 ];
-const Home = () => {
+const Home = ({navigation}) => {
   const [position, setPosition] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -228,6 +228,10 @@ const Home = () => {
     setIsModalVisible(false);
   };
 
+  const profile = () => {
+    navigation.navigate('Profile');
+  };
+
   return (
     <View style={{flex: 1}}>
       <ScrollView style={{flex: 1}}>
@@ -259,9 +263,11 @@ const Home = () => {
                   closeModal={closeModal}
                 />
               </View>
-              <View style={[styles.circle, {backgroundColor: randomColor()}]}>
-                <Text style={styles.alphabet}>A</Text>
-              </View>
+              <TouchableOpacity onPress={profile}>
+                <View style={[styles.circle, {backgroundColor: randomColor()}]}>
+                  <Text style={styles.alphabet}>A</Text>
+                </View>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={{backgroundColor: 'white'}}>
