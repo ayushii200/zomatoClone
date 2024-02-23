@@ -128,6 +128,7 @@ import {
 import {images} from '../Common/images';
 import Dining from '../ZomatoScreens/Dining';
 import Events from '../ZomatoScreens/Events';
+import Profile from '../ZomatoScreens/Profile';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -362,6 +363,7 @@ export default function AppStack() {
         <Stack.Screen name="SplashZomato" component={SplashZomato} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={InfoScreen} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );
