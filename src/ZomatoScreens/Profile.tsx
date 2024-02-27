@@ -1,6 +1,8 @@
 import {
+  Alert,
   Image,
   ScrollView,
+  SectionList,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -27,7 +29,7 @@ const data = [
     images: images.star,
   },
 ];
-const sections = [
+const DATA = [
   {
     title: 'Food orders',
     data2: [
@@ -130,6 +132,11 @@ const sections = [
   },
 ];
 
+const formattedData = DATA.map(section => ({
+  title: section.title,
+  data: section.data2,
+}));
+
 const Profile = ({navigation}) => {
   const handleGoBack = () => {
     navigation.goBack();
@@ -137,6 +144,28 @@ const Profile = ({navigation}) => {
 
   const randomColor = () => {
     return '#' + Math.floor(Math.random() * 16777215).toString(16);
+  };
+  const handleItemPress = item => {
+    if (item.id === 7 && item.name === 'Logout') {
+      Alert.alert(
+        'Confirm Logout',
+        'Are you sure you want to logout?',
+        [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+          },
+          {
+            text: 'Yes',
+            onPress: () => {
+              navigation.navigate('Login');
+              Alert.alert('Logout Successfully!');
+            },
+          },
+        ],
+        {cancelable: false},
+      );
+    }
   };
 
   return (
@@ -201,32 +230,26 @@ const Profile = ({navigation}) => {
               </View>
             </View>
           ))}
-          {sections.map((section, index) => (
-            <View
-              style={{marginTop: 20, backgroundColor: 'white', padding: 5}}
-              key={index}>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View
-                  style={{
-                    width: 4,
-                    height: '100%',
-                    backgroundColor: 'red',
-                    marginRight: 10,
-                  }}
-                />
-                <Text style={styles.txts}>{section.title}</Text>
-              </View>
-              <View style={{backgroundColor: 'white', padding: 5}}>
-                {section.data2.map((datas, dataIndex) => (
-                  <View key={dataIndex}>
+
+          <SectionList
+            sections={formattedData}
+            keyExtractor={(item, index) => item.id.toString()}
+            renderItem={({item, index, section}) => (
+              <>
+                <TouchableOpacity onPress={() => handleItemPress(item)}>
+                  <View
+                    style={{
+                      backgroundColor: 'white',
+                      padding: 5,
+                    }}>
                     <View style={{flexDirection: 'row', marginTop: 20}}>
                       <View style={styles.circles}>
                         <Image
-                          source={datas.images}
+                          source={item.images}
                           style={{marginTop: 5, height: 19, width: 18}}
                         />
                       </View>
-                      <Text style={styles.txt}>{datas.name}</Text>
+                      <Text style={styles.txt}>{item.name}</Text>
                       <View
                         style={{
                           flex: 1,
@@ -236,14 +259,35 @@ const Profile = ({navigation}) => {
                         <FontAwesome name="angle-right" size={24} />
                       </View>
                     </View>
-                    {dataIndex !== section.data2.length - 1 && (
+                    {section.data.length - 1 !== index && (
                       <View style={styles.line} />
                     )}
                   </View>
-                ))}
+                </TouchableOpacity>
+              </>
+            )}
+            renderSectionHeader={({section: {title}}) => (
+              <View
+                style={{
+                  marginTop: 20,
+                  backgroundColor: 'white',
+                  padding: 5,
+                  borderRadius: 10,
+                }}>
+                <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                  <View
+                    style={{
+                      width: 4,
+                      height: '100%',
+                      backgroundColor: 'red',
+                      marginRight: 10,
+                    }}
+                  />
+                  <Text style={styles.txts}>{title}</Text>
+                </View>
               </View>
-            </View>
-          ))}
+            )}
+          />
         </View>
       </View>
     </ScrollView>
@@ -313,7 +357,7 @@ const styles = StyleSheet.create({
   line: {
     borderTopColor: 'gray',
     borderWidth: 0.2,
-    marginTop: 10,
+    marginTop: 5,
     marginLeft: 60,
   },
 });

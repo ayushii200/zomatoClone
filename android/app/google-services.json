@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "799922389855",
-    "project_id": "fir-c1537",
-    "storage_bucket": "fir-c1537.appspot.com"
+    "project_number": "961053648955",
+    "project_id": "dynamic-pivot-415105",
+    "storage_bucket": "dynamic-pivot-415105.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:799922389855:android:5b3241f8dbd97e7667acea",
+        "mobilesdk_app_id": "1:961053648955:android:074e2a836c5a70e664541e",
         "android_client_info": {
-          "package_name": "com.demo"
+          "package_name": "com.ZomatoByAyushi"
         }
       },
       "oauth_client": [
         {
-          "client_id": "799922389855-vp9j84vjvk42bs02daqqtqus7m4vs0vm.apps.googleusercontent.com",
+          "client_id": "961053648955-c2p199l4g3j4vurjubli9u63v67e1tdk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ZomatoByAyushi",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "961053648955-1froe9dumagvppj43rblf29rrd7g1pn1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA9oxmoX9kdBbAlBWRqpbI1cUATBmSlBWg"
+          "current_key": "AIzaSyD8rCntIs_orzvCOdKQN8iq_n3buQntu1c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "799922389855-vp9j84vjvk42bs02daqqtqus7m4vs0vm.apps.googleusercontent.com",
+              "client_id": "961053648955-1froe9dumagvppj43rblf29rrd7g1pn1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

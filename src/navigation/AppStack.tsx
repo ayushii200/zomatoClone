@@ -90,6 +90,8 @@
 // };
 // export default AppStack;
 
+//AJIO
+
 // import React from 'react';
 // import {createStackNavigator} from '@react-navigation/stack';
 // import Splash from '../screens/Splash';
@@ -138,59 +140,6 @@ const goToBlinkitWebsite = () => {
   Linking.openURL('https://www.blinkit.com');
 };
 
-// const CustomTabBar = ({state, descriptors, navigation}) => {
-//   return (
-//     <View style={styles.tabBar}>
-//       {state.routes.map((route, index) => {
-//         const {options} = descriptors[route.key];
-//         const label =
-//           options.tabBarLabel !== undefined
-//             ? options.tabBarLabel
-//             : options.title !== undefined
-//             ? options.title
-//             : route.name;
-
-//         const isFocused = state.index === index;
-
-//         const onPress = () => {
-//           const event = navigation.emit({
-//             type: 'tabPress',
-//             target: route.key,
-//             canPreventDefault: true,
-//           });
-
-//           if (!isFocused && !event.defaultPrevented) {
-//             navigation.navigate(route.name);
-//           }
-//         };
-
-//         const tintColor =
-//           route.name === 'blinkit' ? null : isFocused ? 'red' : 'grey';
-
-//         return (
-//           <TouchableOpacity
-//             key={index}
-//             accessibilityRole="button"
-//             accessibilityState={isFocused ? {selected: true} : {}}
-//             onPress={onPress}
-//             style={styles.tabItem}>
-//             <Image
-//               source={options.tabBarIcon({focused: isFocused})}
-//               style={{
-//                 tintColor: tintColor,
-//                 height: options.height || 30,
-//                 width: options.width || 40,
-//               }}
-//             />
-//             <Text style={{color: isFocused ? 'red' : 'grey'}}>{label}</Text>
-//             {isFocused && <View style={styles.line} />}
-//           </TouchableOpacity>
-//         );
-//       })}
-//     </View>
-//   );
-// };
-
 function InfoScreen() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
@@ -198,88 +147,7 @@ function InfoScreen() {
     </Stack.Navigator>
   );
 }
-// function CoTabs() {
-//   return (
-//     <Tab.Navigator
-//       tabBar={props => <CustomTabBar {...props} />}
-//       screenOptions={{
-//         headerShown: false,
-//         tabBarLabelStyle: {
-//           fontSize: 16,
-//         },
-//         tabBarActiveTintColor: 'black',
-//       }}>
-//       <Tab.Screen
-//         name="Delivery"
-//         component={Home}
-//         options={{
-//           tabBarIcon: ({focused}) => images.delivery,
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Dining"
-//         component={Dining}
-//         options={{
-//           tabBarIcon: ({focused}) => images.dinner,
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Events"
-//         component={Events}
-//         options={{
-//           tabBarIcon: ({focused}) => images.ticket,
-//         }}
-//       />
-//       <Tab.Screen
-//         name="Blinkit"
-//         component={EmptyComponent}
-//         options={{
-//           tabBarLabel: '',
-//           tabBarIcon: () => (
-//             <TouchableOpacity onPress={goToBlinkitWebsite}>
-//               <Image
-//                 source={images.blinkit}
-//                 style={{
-//                   height: 50,
-//                   width: 90,
-//                   marginTop: 21,
-//                 }}
-//               />
-//             </TouchableOpacity>
-//           ),
-//         }}
-//       />
-//       {/* <Tab.Screen
-//         name="Blinkit"
-//         component={EmptyComponent}
-//         options={{
-//           // tabBarLabel: '',
-//           tabBarIcon: () => images.blinkit,
-//         }}
-//       /> */}
-//     </Tab.Navigator>
-//   );
-// }
-// const styles = StyleSheet.create({
-//   tabBar: {
-//     flexDirection: 'row',
-//     backgroundColor: 'white',
-//     borderTopWidth: 1,
-//     borderTopColor: 'lightgrey',
-//   },
-//   tabItem: {
-//     flex: 1,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   line: {
-//     position: 'absolute',
-//     top: 0,
-//     width: '100%',
-//     height: 2,
-//     backgroundColor: 'red',
-//   },
-// });
+
 function CoTabs() {
   return (
     <Tab.Navigator

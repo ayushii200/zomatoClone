@@ -21,17 +21,17 @@ const Login = ({navigation}: any) => {
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
-        '799922389855-vp9j84vjvk42bs02daqqtqus7m4vs0vm.apps.googleusercontent.com',
+        '961053648955-1froe9dumagvppj43rblf29rrd7g1pn1.apps.googleusercontent.com',
     });
   }, []);
-  // console.log('userInfo', userInfo);
+  console.log('userInfo', userInfo);
 
   const googleLogin = async () => {
     try {
       await GoogleSignin.hasPlayServices();
       const usrInfo = await GoogleSignin.signIn();
       // setState({ userInfo });
-      // setUserInfo(usrInfo);
+      setUserInfo(usrInfo);
       // console.log(usrInfo);
       console.log('userInfo', usrInfo);
     } catch (error) {
